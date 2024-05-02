@@ -23,7 +23,9 @@ JOIN country c on ci.country_id = c.country_id
 GROUP by c.country_id
 HAVING count(ci.city) >= 2
 ORDER by count(ci.city) ASC
-/*7*/
+/*7 falta*/
+SELECT rental_date FROM rental
+WHERE rental_date
 /*8*/
 /*9*/
 /*10*/
