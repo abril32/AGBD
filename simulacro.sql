@@ -18,6 +18,11 @@ JOIN country c on ci.country_id = c.country_id
 GROUP by c.country_id
 ORDER by cant_ciudad DESC
 /*6*/
+SELECT country,count(ci.city) FROM city ci
+JOIN country c on ci.country_id = c.country_id
+GROUP by c.country_id
+HAVING count(ci.city) >= 2
+ORDER by count(ci.city) ASC
 /*7*/
 /*8*/
 /*9*/
