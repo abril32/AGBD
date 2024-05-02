@@ -5,6 +5,8 @@ ORDER by title ASC
 SELECT DISTINCT rating FROM film
 ORDER by rating ASC
 /*3*/
+SELECT title,rating,rental_rate FROM film
+ORDER by rental_rate DESC
 /*4*/
 /*5*/
 /*6*/
