@@ -35,3 +35,6 @@ SELECT first_name, salary FROM employees e
 ORDER by salary DESC
 LIMIT 1 OFFSET 2
 /*10*/
+SELECT avg(cant_hijos), max(cant_hijos) FROM (
+SELECT COUNT(d.first_name) as cant_hijos FROM dependents d
+GROUP BY d.dependent_id)
