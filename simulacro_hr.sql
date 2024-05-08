@@ -6,21 +6,24 @@ SELECT DISTINCT salary FROM employees
 ORDER by salary DESC
 /*3*/
 SELECT job_title, min_salary, max_salary FROM jobs
-WHERE job_title like '%Manager'
+WHERE job_title like '%Manager%'
 ORDER by max_salary DESC
 /*4*/
-SELECT country_name, region_name FROM employees e
-JOIN departments d on e.department_id = d.department_id
-JOIN locations l on d.location_id = l.location_id
-JOIN countries c on l.country_id = c.country_id
+SELECT country_name, region_name FROM countries c
 JOIN regions r on c.region_id = r.region_id
-ORDER by country_name, region_name DESC
+ORDER by region_name 
 /*5*/
 SELECT first_name, last_name, department_name, salary FROM employees e
 JOIN departments d on e.department_id = d.department_id
 WHERE salary >= 9000 AND salary <=17000
 /*6*/
+SELECT count(c.country_name), region_name FROM countries c
+JOIN regions r on r.region_id = c.region_id
+GROUP by r.region_name
+HAVING count(c.country_name) <= 5
 /*7*/
+SELECT min(hire_date) as mas_vieja, max(hire_date) as mas_actual FROM employees
+ORDER by mas_actual DESC
 /*8*/
 /*9*/
 /*10*/
