@@ -31,4 +31,7 @@ GROUP by e.employee_id
 ORDER by e.first_name DESC
 LIMIT 5
 /*9*/
+SELECT first_name, salary FROM employees e
+ORDER by salary DESC
+LIMIT 1 OFFSET 2
 /*10*/
