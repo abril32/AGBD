@@ -25,5 +25,10 @@ HAVING count(c.country_name) <= 5
 SELECT min(hire_date) as mas_vieja, max(hire_date) as mas_actual FROM employees
 ORDER by mas_actual DESC
 /*8*/
+SELECT e.first_name, e.last_name, count(d.first_name) as hijo_nombre FROM employees e
+JOIN dependents d on e.employee_id = d.employee_id
+GROUP by e.employee_id
+ORDER by e.first_name DESC
+LIMIT 5
 /*9*/
 /*10*/
