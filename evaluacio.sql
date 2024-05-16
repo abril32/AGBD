@@ -9,9 +9,15 @@ ORDER by type ASC
 -- datos del auto (marca, modelo y patente) de 
 -- todos las mujeres de menos de 40 años, 
 -- elegir el orden en que se muestran 
+SELECT name,age,gender,car_make,car_model,plate_number FROM person p
+JOIN drivers_license d on p.license_id = d.id
+WHERE gender = 'female' AND age < 40
+ORDER by name asc
 
 -- 3) Buscar la lista de todas las personas
 -- que NO están asociadas al gimnasio Get-Fit-Now
+
+
 
 -- 4) Encontrar el nombre y la dirección completa
 -- de la persona que vive en la tercera casa
