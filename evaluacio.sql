@@ -40,7 +40,10 @@ WHERE gender = 'male'
 -- marca, ordenadas desde la que tiene más 
 -- autos a la que tiene menos.  Descartar
 -- las marcas que tienen menos de 100 autos
-
+SELECT count(car_make) as cantidad_marca,car_make FROM drivers_license d
+GROUP by car_make
+HAVING cantidad_marca >= 100
+ORDER by cantidad_marca DESC
 
 -- 7) Mostrar los nombres, numeros de seguridad social
 -- (ssn), id de membresía y tipo de membresía de
@@ -49,6 +52,9 @@ WHERE gender = 'male'
 -- ordenados de manera que los de un mismo tipo de
 -- membresía (gold, silver, etc) aparezcan todos 
 -- seguidos y dentro de cada una ordenados por ssn.   
+SELECT p.name,p.ssn,m.membership_id,g.membership_status FROM person p
+JOIN get_fit_now_member g on p.id = g.person_id
+JOIN get_fit_now_check_in m on g.id = m.membership_id
 
 -- 8) Hacer un ranking de los 5 eventos más populares
 -- a los que asistieron las personas que ganan 
