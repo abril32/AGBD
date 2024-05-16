@@ -16,7 +16,9 @@ ORDER by name asc
 
 -- 3) Buscar la lista de todas las personas
 -- que NO están asociadas al gimnasio Get-Fit-Now
-
+SELECT p.name as personas, g.name as gimnasta FROM person p
+JOIN get_fit_now_member g on p.id = g.person_id
+WHERE personas != gimnasta
 
 
 -- 4) Encontrar el nombre y la dirección completa
@@ -30,6 +32,9 @@ LIMIT 1 OFFSET 2
 
 -- 5) Encontrar la edad mínima, máxima y promedio
 -- de los varones que tienen licencia de conducir
+SELECT min(age),max(age),avg(age),gender FROM person p
+JOIN drivers_license d on p.license_id = d.id
+WHERE gender = 'male'
 
 -- 6) Contar la cantidad de autos de cada
 -- marca, ordenadas desde la que tiene más 
