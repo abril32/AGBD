@@ -16,6 +16,9 @@ ORDER by name asc
 
 -- 3) Buscar la lista de todas las personas
 -- que NO están asociadas al gimnasio Get-Fit-Now
+SELECT p.name as personas, g.name as gimnasta FROM person p
+LEFT JOIN get_fit_now_member g on p.id = g.person_id
+WHERE gimnasta is NULL
 
 
 
