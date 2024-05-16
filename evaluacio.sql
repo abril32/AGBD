@@ -41,6 +41,7 @@ WHERE gender = 'male'
 -- autos a la que tiene menos.  Descartar
 -- las marcas que tienen menos de 100 autos
 
+
 -- 7) Mostrar los nombres, numeros de seguridad social
 -- (ssn), id de membresía y tipo de membresía de
 -- las personas que fueron al gimnasio aunque sea una
