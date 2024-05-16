@@ -16,9 +16,7 @@ ORDER by name asc
 
 -- 3) Buscar la lista de todas las personas
 -- que NO están asociadas al gimnasio Get-Fit-Now
-SELECT p.name as personas, g.name as gimnasta FROM person p
-JOIN get_fit_now_member g on p.id = g.person_id
-WHERE personas != gimnasta
+
 
 
 -- 4) Encontrar el nombre y la dirección completa
@@ -59,4 +57,9 @@ JOIN get_fit_now_check_in m on g.id = m.membership_id
 -- 8) Hacer un ranking de los 5 eventos más populares
 -- a los que asistieron las personas que ganan 
 -- más de 35000 dolares al año.  
-
+SELECT count(event_name),event_name FROM person p
+JOIN facebook_event_checkin f on p.id = f.person_id
+JOIN income i on p.ssn = i.ssn
+GROUP by event_id
+HAVING annual_income > 35000
+ORDER by event_id DESC 
