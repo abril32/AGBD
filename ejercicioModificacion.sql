@@ -8,3 +8,7 @@ INSERT INTO tracks (name,MediaTypeId,Milliseconds,UnitPrice)
 VALUES ("All Too Well",1,316800,0.99),
 	   ("Starlight",1,202800,0.99),
 	   ("We Are Never Ever Getting Back Together",1,187200,0.99);
+
+UPDATE tracks SET AlbumId = 276, Composer = "Taylor Swift", GenreId = 9, Bytes = "392650" 
+	WHERE GenreId is NULL;
+
