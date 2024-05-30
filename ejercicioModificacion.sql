@@ -12,3 +12,11 @@ VALUES ("All Too Well",1,316800,0.99),
 UPDATE tracks SET AlbumId = 276, Composer = "Taylor Swift", GenreId = 9, Bytes = "392650" 
 	WHERE GenreId is NULL;
 
+DELETE FROM tracks 
+WHERE Composer = "Taylor Swift" 
+
+DELETE FROM albums
+WHERE Title = "Red"
+
+DELETE FROM artists
+WHERE name = "Taylor Swift"
