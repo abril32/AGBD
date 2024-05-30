@@ -20,8 +20,6 @@ SELECT p.name as personas, g.name as gimnasta FROM person p
 LEFT JOIN get_fit_now_member g on p.id = g.person_id
 WHERE gimnasta is NULL
 
-
-
 -- 4) Encontrar el nombre y la dirección completa
 -- de la persona que vive en la tercera casa
 -- de la calle 'Franklin Ave' (ordenadas por la altura
