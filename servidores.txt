@@ -1,0 +1,44 @@
+
+lsb_release -d
+ver la versión de linux
+
+sudo systemctl start mysql
+sudo apt install mariadb-server 
+instala el servidor
+
+show databases
+muestra databases
+
+mysql -u root -p
+entra como usuario root
+
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+edita el servidor de
+
+reinicia el servicio :
+sudo systemctl restart mysql
+
+Creación de la base de datos
+CREATE DATABASE `mibd`;
+Creación del usuario
+CREATE USER 'miusuario'@localhost IDENTIFIED BY 'mipassword';
+
+Conceder permisos para poder acceder 
+
+GRANT USAGE ON *.* TO 'miusuario'@localhost IDENTIFIED BY 'mipassword';
+
+Conceder todos los privilegios sobre la base de datos al usuario
+
+GRANT ALL privileges ON `mibd`.* TO 'miusuario'@localhost IDENTIFIED BY 'mipassword';
+
+ Aplicar los cambios realizados
+FLUSH PRIVILEGES; 
+Verificar que nuestro nuevo usuario tiene los permisos correctos
+SHOW GRANTS FOR 'miusuario'@localhost;   
+
+Mostrar databases
+ SHOW DATABASES;
+
+
+Crear databases
+CREATE DATABASE 'data';
